@@ -133,6 +133,8 @@ def main():
     while not q.empty():
         results.append(q.get())
 
+    assert len(results) == args.nthreads
+
     max_time = max(results)
     min_time = min(results)
     avg_time = functools.reduce(lambda x, y: x + y, results) / len(results)
